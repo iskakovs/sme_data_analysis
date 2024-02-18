@@ -35,3 +35,6 @@ plot(decomposed)
 ggplot(data, aes(x = date, y = number)) +
   geom_line() +
   labs(title = "Time Series Data", x = "Date", y = "Firms Registered")
+
+# Check for autocorrelation using ACF and PACF plots
+acf(ts_data, main = "Autocorrelation Function")
