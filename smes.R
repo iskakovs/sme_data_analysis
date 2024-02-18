@@ -9,3 +9,6 @@ library(stats)
 library(strucchange)
 library(zoo)
 library(nlme)
+
+# Set locale to English
+Sys.setlocale("LC_TIME", "English")
