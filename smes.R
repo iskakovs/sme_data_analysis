@@ -30,3 +30,8 @@ decomposed <- stl(ts_data, s.window = "periodic")
 
 # Plot the data
 plot(decomposed)
+
+# Using ggplot to create a time series plot
+ggplot(data, aes(x = date, y = number)) +
+  geom_line() +
+  labs(title = "Time Series Data", x = "Date", y = "Firms Registered")
