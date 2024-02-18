@@ -24,3 +24,6 @@ data <- read_delim("C:\\Users\\777\\Desktop\\data\\Data.csv",
 # Convert the data to a time series object
 # Assuming the data is daily, but we want to analyze weekly patterns
 ts_data <- ts(data$number, frequency = 7)
+
+# Decompose the time series
+decomposed <- stl(ts_data, s.window = "periodic")
