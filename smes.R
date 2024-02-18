@@ -18,5 +18,6 @@ data <- read_delim("C:\\Users\\777\\Desktop\\data\\Data.csv",
                    delim = ";", 
                    col_types = cols(
                      id = col_integer(),
+                     date = col_date(format = "%d.%m.%Y"),
                      number = col_double()
                    ))
