@@ -21,3 +21,6 @@ data <- read_delim("C:\\Users\\777\\Desktop\\data\\Data.csv",
                      date = col_date(format = "%d.%m.%Y"),
                      number = col_double()
                    ))
+# Convert the data to a time series object
+# Assuming the data is daily, but we want to analyze weekly patterns
+ts_data <- ts(data$number, frequency = 7)
