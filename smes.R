@@ -12,3 +12,11 @@ library(nlme)
 
 # Set locale to English
 Sys.setlocale("LC_TIME", "English")
+
+# Read the data with custom delimiter
+data <- read_delim("C:\\Users\\777\\Desktop\\data\\Data.csv", 
+                   delim = ";", 
+                   col_types = cols(
+                     id = col_integer(),
+                     number = col_double()
+                   ))
