@@ -145,3 +145,6 @@ p <- ggplot(data_df, aes(x = Date, y = Value)) +
 
 # Print the plot
 print(p)
+
+# Convert breakpoint indices to actual dates
+breakpoint_dates <- date_seq[breakpoints]                        
