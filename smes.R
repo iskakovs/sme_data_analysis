@@ -112,3 +112,14 @@ p <- ggplot(data_df, aes(x = Time, y = Value)) +
 
 # Print the plot
 print(p)
+
+# Assuming we have already created the 'reg_data' dataframe with the dummy variables for the breakpoints.
+ols_model <- lm(y ~ ., data=reg_data)
+
+# Obtain the fitted values from the model.
+reg_data$Fitted <- predict(ols_model, newdata = reg_data)
+
+# Update the 'data_df' with the fitted values.
+data_df$Fitted <- reg_data$Fitted
+                        
+                        
