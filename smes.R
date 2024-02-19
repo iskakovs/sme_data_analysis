@@ -82,3 +82,33 @@ ols_model <- lm(y ~ ., data=reg_data)
 
 # Check the summary for p-values
 summary(ols_model)
+
+# Assuming 'ts_data' is our time series object and 'breakpoints' are the indices of breaks
+data_vector <- as.numeric(ts_data) # Convert time series to numeric vector if needed
+breakpoints <- c(72, 275) # Replace this with your actual breakpoints
+
+# Create a data frame for plotting
+time_index <- 1:length(data_vector)
+data_df <- data.frame(Time = time_index, Value = data_vector)
+
+# Fit a linear model with breakpoints (create dummy variables for each breakpoint)
+break_dummies <- sapply(breakpoints, function(bp) as.numeric(time_index > bp))
+colnames(break_dummies) <- paste0("Break", seq_along(breakpoints))
+model_data <- cbind(data_df, break_dummies)
+fit <- lm(Value ~ ., data=model_data)
+
+# Get the fitted trendline values
+data_df$Fitted <- predict(fit)
+
+# Create the ggplot object
+p <- ggplot(data_df, aes(x = Time, y = Value)) +
+  geom_line() +
+  geom_line(aes(y = Fitted), color = "blue") +
+  geom_vline(xintercept = breakpoints, color = "red", linetype = "dashed") +
+  labs(title = "Time Series Analysis of Foreign Participation Company Registrations with Indicated Structural Breaks",
+       x = "Time",
+       y = "Foreign Firms Registered") +
+  theme_minimal()
+
+# Print the plot
+print(p)
