@@ -124,3 +124,24 @@ data_df$Fitted <- reg_data$Fitted
                         
 # Create a date sequence based on our data's date range
 date_seq <- seq(from = min(data$date), to = max(data$date), by = "day")                        
+
+
+# Ensure that the length of date_seq matches the length of our time series data
+date_seq <- date_seq[1:length(ts_data)]
+
+# Now, when we can create a data frame for plotting, include the date sequence
+data_df <- data.frame(Date = date_seq, Value = data_vector)
+
+# Update the plotting function to use Date instead of Time
+p <- ggplot(data_df, aes(x = Date, y = Value)) +
+  geom_line() +
+  geom_line(aes(y = Fitted), color = "blue") +
+  geom_vline(xintercept = breakpoints, color = "red", linetype = "dashed") +
+  scale_x_date(date_breaks = "months", date_labels = "%b %Y") + # Change date breaks and labels as needed
+  labs(title = "Time Series Analysis of Foreign Participation Company Registrations with Indicated Structural Breaks",
+       x = "Date",
+       y = "Number of Foreign Firms Registered") +
+  theme_minimal()
+
+# Print the plot
+print(p)
