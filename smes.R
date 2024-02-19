@@ -59,3 +59,21 @@ summary(bp)
 
 # Plot the breakpoints
 plot(bp)
+
+# Assuming 'ts_data' is your time series object and 'bp' is the breakpoint object you obtained previously
+data_vector <- as.numeric(ts_data)
+breakpoints <- as.numeric(bp$breakpoints)
+
+# Create a data frame for the regression
+reg_data <- data.frame(
+  y = data_vector,
+  break1 = ifelse(1:length(data_vector) > breakpoints[1], 1, 0)
+)
+
+# If you have more than one breakpoint, add more dummy variables
+if(length(breakpoints) > 1) {
+  for(i in 2:length(breakpoints)) {
+    reg_data[paste0('break', i)] <- ifelse(1:length(data_vector) > breakpoints[i], 1, 0)
+  }
+}
+
