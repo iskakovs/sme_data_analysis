@@ -122,4 +122,5 @@ reg_data$Fitted <- predict(ols_model, newdata = reg_data)
 # Update the 'data_df' with the fitted values.
 data_df$Fitted <- reg_data$Fitted
                         
-                        
+# Create a date sequence based on our data's date range
+date_seq <- seq(from = min(data$date), to = max(data$date), by = "day")                        
