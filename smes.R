@@ -39,3 +39,8 @@ ggplot(data, aes(x = date, y = number)) +
 # Check for autocorrelation using ACF and PACF plots
 acf(ts_data, main = "Autocorrelation Function")
 pacf(ts_data, main = "Partial Autocorrelation Function")
+
+# Conduct a Ljung-Box test
+Box.test(ts_data, lag = as.integer(log(length(ts_data))), type = "Ljung-Box")
+
+
