@@ -50,3 +50,6 @@ coef(bp)
 
 # Convert the time series object to a numeric vector
 data_vector <- as.numeric(ts_data)
+
+# Run breakpoint analysis
+bp <- breakpoints(data_vector ~ 1)
