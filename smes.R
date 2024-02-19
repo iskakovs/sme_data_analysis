@@ -47,3 +47,6 @@ Box.test(ts_data, lag = as.integer(log(length(ts_data))), type = "Ljung-Box")
 bp <- breakpoints(ts_data ~ 1)
 bp
 coef(bp)
+
+# Convert the time series object to a numeric vector
+data_vector <- as.numeric(ts_data)
