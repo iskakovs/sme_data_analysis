@@ -77,3 +77,8 @@ if(length(breakpoints) > 1) {
   }
 }
 
+# Fit the OLS model with the dummy variables
+ols_model <- lm(y ~ ., data=reg_data)
+
+# Check the summary for p-values
+summary(ols_model)
