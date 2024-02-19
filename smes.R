@@ -56,3 +56,6 @@ bp <- breakpoints(data_vector ~ 1)
 
 # Summary of breakpoints
 summary(bp)
+
+# Plot the breakpoints
+plot(bp)
