@@ -53,3 +53,6 @@ data_vector <- as.numeric(ts_data)
 
 # Run breakpoint analysis
 bp <- breakpoints(data_vector ~ 1)
+
+# Summary of breakpoints
+summary(bp)
