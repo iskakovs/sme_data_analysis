@@ -175,4 +175,5 @@ reg_data$Fitted <- predict(ols_model)
 # And 'data$date' is the column with the actual dates in our original dataset
 breakpoint_dates <- data$date[breakpoints]
 
-                        
+# Merge the fitted values and the actual dates into 'data_df' for plotting
+data_df <- merge(data_df, data.frame(Date = data$date, Fitted = reg_data$Fitted), by = "Date", all.x = TRUE)                        
