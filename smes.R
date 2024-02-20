@@ -148,3 +148,16 @@ print(p)
 
 # Convert breakpoint indices to actual dates
 breakpoint_dates <- date_seq[breakpoints]                        
+
+# Use these dates in our plot
+p <- ggplot(data_df, aes(x = Date, y = Value)) +
+  geom_line() +
+  geom_line(aes(y = Fitted), color = "blue") +
+  geom_vline(xintercept = breakpoint_dates, color = "red", linetype = "dashed") +
+  scale_x_date(date_breaks = "months", date_labels = "%b %Y") +
+  labs(title = "Time Series Analysis of Foreign Participation Company Registrations with Indicated Structural Breaks",
+       x = "Date",
+       y = "Number of Foreign Firms Registered") +
+  theme_minimal()
+
+                        
