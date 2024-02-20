@@ -201,3 +201,6 @@ ts_data_adj <- seasadj(decomposed)
 # Re-run the breakpoint analysis and regression on the seasonally adjusted data
 bp_adj <- breakpoints(ts_data_adj ~ 1)
 summary(bp_adj)
+
+# Convert the seasonally adjusted time series to a numeric vector
+data_vector_adj <- as.numeric(ts_data_adj)
