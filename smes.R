@@ -168,6 +168,8 @@ print(p)
 # Assuming 'reg_data' already has the dummy variables for the breakpoints
 ols_model <- lm(y ~ ., data=reg_data)
 
+# Add the fitted values to the 'reg_data' dataframe
+reg_data$Fitted <- predict(ols_model)
 
-                      
+
                         
