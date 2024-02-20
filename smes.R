@@ -204,3 +204,9 @@ summary(bp_adj)
 
 # Convert the seasonally adjusted time series to a numeric vector
 data_vector_adj <- as.numeric(ts_data_adj)
+
+# Create a new data frame for the adjusted regression
+reg_data_adj <- data.frame(
+  y = data_vector_adj,
+  break1 = ifelse(1:length(data_vector_adj) > breakpoints[1], 1, 0)
+)
