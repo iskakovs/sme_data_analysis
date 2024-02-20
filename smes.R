@@ -176,4 +176,17 @@ reg_data$Fitted <- predict(ols_model)
 breakpoint_dates <- data$date[breakpoints]
 
 # Merge the fitted values and the actual dates into 'data_df' for plotting
-data_df <- merge(data_df, data.frame(Date = data$date, Fitted = reg_data$Fitted), by = "Date", all.x = TRUE)                        
+data_df <- merge(data_df, data.frame(Date = data$date, Fitted = reg_data$Fitted), by = "Date", all.x = TRUE)
+
+# Create the plot using 'Date' for the x-axis and including the fitted trendline and breakpoints
+p <- ggplot(data_df, aes(x = Date, y = Value)) +
+  geom_line() +
+  geom_line(aes(y = Fitted), color = "blue") +
+  geom_vline(xintercept = breakpoint_dates, color = "red", linetype = "dashed") +
+  scale_x_date(date_breaks = "months", date_labels = "%b %Y") +
+  labs(title = "",
+       x = "Date",
+       y = "Number of Foreign Firms Registered") +
+  theme_minimal()
+
+                        
