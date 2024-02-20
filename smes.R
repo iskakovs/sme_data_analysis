@@ -160,4 +160,5 @@ p <- ggplot(data_df, aes(x = Date, y = Value)) +
        y = "Number of Foreign Firms Registered") +
   theme_minimal()
 
-                        
+# Print the plot
+print(p)                      
