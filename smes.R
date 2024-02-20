@@ -197,3 +197,7 @@ decomposed <- stl(ts_data, s.window = "periodic", robust = TRUE)
 
 # Seasonally adjust the time series data
 ts_data_adj <- seasadj(decomposed)
+
+# Re-run the breakpoint analysis and regression on the seasonally adjusted data
+bp_adj <- breakpoints(ts_data_adj ~ 1)
+summary(bp_adj)
