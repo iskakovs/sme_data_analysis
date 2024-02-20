@@ -194,3 +194,6 @@ print(p)
                         
 # Decompose the time series with STL considering weekly seasonality
 decomposed <- stl(ts_data, s.window = "periodic", robust = TRUE)
+
+# Seasonally adjust the time series data
+ts_data_adj <- seasadj(decomposed)
