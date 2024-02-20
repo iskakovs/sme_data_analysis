@@ -192,3 +192,5 @@ p <- ggplot(data_df, aes(x = Date, y = Value)) +
 # Print the plot
 print(p)
                         
+# Decompose the time series with STL considering weekly seasonality
+decomposed <- stl(ts_data, s.window = "periodic", robust = TRUE)
