@@ -210,3 +210,10 @@ reg_data_adj <- data.frame(
   y = data_vector_adj,
   break1 = ifelse(1:length(data_vector_adj) > breakpoints[1], 1, 0)
 )
+
+# If we have more than one breakpoint, add more dummy variables
+if(length(breakpoints) > 1) {
+  for(i in 2:length(breakpoints)) {
+    reg_data_adj[paste0('break', i)] <- ifelse(1:length(data_vector_adj) > breakpoints[i], 1, 0)
+  }
+}
