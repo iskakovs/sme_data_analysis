@@ -250,3 +250,6 @@ reg_data_adj_diff <- data.frame(
 
 # Fit the OLS model with the dummy variables on the differenced data
 ols_model_adj_diff <- lm(y ~ ., data=reg_data_adj_diff)
+
+# Check the summary for p-values
+summary(ols_model_adj_diff)
