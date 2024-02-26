@@ -222,5 +222,9 @@ if(length(breakpoints) > 1) {
 ols_model_adj <- lm(y ~ ., data=reg_data_adj)
 summary(ols_model_adj)
 
-                        
+#################################
+
+# Assuming 'ts_data_adj' is the seasonally adjusted data
+# Add a lagged version of the dependent variable
+reg_data_adj$lag_y <- c(NA, head(ts_data_adj, -1))                        
                         
