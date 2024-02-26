@@ -217,3 +217,10 @@ if(length(breakpoints) > 1) {
     reg_data_adj[paste0('break', i)] <- ifelse(1:length(data_vector_adj) > breakpoints[i], 1, 0)
   }
 }
+
+# Fit the OLS model with the dummy variables on the seasonally adjusted data
+ols_model_adj <- lm(y ~ ., data=reg_data_adj)
+
+
+                        
+                        
