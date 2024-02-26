@@ -241,3 +241,9 @@ ts_data_adj_diff <- diff(ts_data_adj)
 bp_adj_diff <- breakpoints(ts_data_adj_diff ~ 1)
 summary(bp_adj_diff)
 
+# Update your regression data to include the differenced data
+reg_data_adj_diff <- data.frame(
+  y = as.numeric(ts_data_adj_diff),
+  break1 = ifelse(1:length(ts_data_adj_diff) > breakpoints[1], 1, 0),
+  break2 = ifelse(1:length(ts_data_adj_diff) > breakpoints[2], 1, 0)
+)
