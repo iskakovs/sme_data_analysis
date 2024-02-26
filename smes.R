@@ -132,7 +132,7 @@ date_seq <- date_seq[1:length(ts_data)]
 # Now, when we can create a data frame for plotting, include the date sequence
 data_df <- data.frame(Date = date_seq, Value = data_vector)
 
-# Update the plotting function to use Date instead of Time
+# Update the plotting function to use Date instead of Time 
 p <- ggplot(data_df, aes(x = Date, y = Value)) +
   geom_line() +
   geom_line(aes(y = Fitted), color = "blue") +
