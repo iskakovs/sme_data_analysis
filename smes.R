@@ -228,3 +228,5 @@ summary(ols_model_adj)
 # Add a lagged version of the dependent variable
 reg_data_adj$lag_y <- c(NA, head(ts_data_adj, -1))                        
                         
+# Now fit the model including the lagged term
+ols_model_adj_lag <- lm(y ~ lag_y + break1 + break2, data=reg_data_adj)
