@@ -233,3 +233,5 @@ ols_model_adj_lag <- lm(y ~ lag_y + break1 + break2, data=reg_data_adj)
 
 # Check the summary for p-values and autocorrelation
 summary(ols_model_adj_lag)
+
+                        
