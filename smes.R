@@ -240,3 +240,4 @@ ts_data_adj_diff <- diff(ts_data_adj)
 # Perform breakpoint analysis on the differenced data
 bp_adj_diff <- breakpoints(ts_data_adj_diff ~ 1)
 summary(bp_adj_diff)
+
