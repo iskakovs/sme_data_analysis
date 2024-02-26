@@ -220,7 +220,7 @@ if(length(breakpoints) > 1) {
 
 # Fit the OLS model with the dummy variables on the seasonally adjusted data
 ols_model_adj <- lm(y ~ ., data=reg_data_adj)
-
+summary(ols_model_adj)
 
                         
                         
