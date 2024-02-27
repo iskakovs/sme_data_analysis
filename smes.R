@@ -263,3 +263,5 @@ ols_model_adj_nw <- lm(y ~ ., data=reg_data_adj)
 coeftest(ols_model_adj_nw, vcov = NeweyWest(ols_model_adj_nw))
 summary(ols_model_adj_nw)
 
+# Assume 'date_seq' is the sequence of actual dates corresponding to our time series data
+breakpoint_dates <- date_seq[breakpoints]
