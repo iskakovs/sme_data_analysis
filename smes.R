@@ -261,3 +261,5 @@ library(sandwich)
 # Calculate robust standard errors using Newey-West
 ols_model_adj_nw <- lm(y ~ ., data=reg_data_adj)
 coeftest(ols_model_adj_nw, vcov = NeweyWest(ols_model_adj_nw))
+
+
