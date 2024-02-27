@@ -254,3 +254,6 @@ ols_model_adj_diff <- lm(y ~ ., data=reg_data_adj_diff)
 # Check the summary for p-values
 summary(ols_model_adj_diff)
 
+# Install necessary package if not already installed
+if (!require("sandwich")) install.packages("sandwich")
+library(sandwich)
