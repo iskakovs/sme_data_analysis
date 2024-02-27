@@ -277,3 +277,6 @@ break_summary <- data.frame(
 
 # Print the summary table
 print(break_summary)
+
+# Calculate residuals from the model
+residuals_nw <- residuals(ols_model_adj_nw)
