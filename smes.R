@@ -280,3 +280,6 @@ print(break_summary)
 
 # Calculate residuals from the model
 residuals_nw <- residuals(ols_model_adj_nw)
+
+# Plot ACF and PACF of the residuals
+acf(residuals_nw, main = "ACF of Residuals")
