@@ -265,3 +265,12 @@ summary(ols_model_adj_nw)
 
 # Assume 'date_seq' is the sequence of actual dates corresponding to our time series data
 breakpoint_dates <- date_seq[breakpoints]
+
+# Create a summary table of the breakpoints with their corresponding dates
+break_summary <- data.frame(
+  Breakpoint_Index = breakpoints,
+  Breakpoint_Date = breakpoint_dates,
+  Coefficient_Estimate = coef(ols_model_adj_nw)[c('break1', 'break2')],
+  Std_Error = sqrt(diag(vcovHC(ols_model_adj_nw)))[c('break1', 'break2')],
+  Significance = coeftest(ols_model_adj_nw, vcov = NeweyWest(ols_model_adj_nw))[c('break1', 'break2'), "Pr(>|t|)"]
+)
