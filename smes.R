@@ -257,3 +257,7 @@ summary(ols_model_adj_diff)
 # Install necessary package if not already installed
 if (!require("sandwich")) install.packages("sandwich")
 library(sandwich)
+
+# Calculate robust standard errors using Newey-West
+ols_model_adj_nw <- lm(y ~ ., data=reg_data_adj)
+coeftest(ols_model_adj_nw, vcov = NeweyWest(ols_model_adj_nw))
