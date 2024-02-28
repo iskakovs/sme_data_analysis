@@ -266,7 +266,7 @@ summary(ols_model_adj_nw)
 # Assume 'date_seq' is the sequence of actual dates corresponding to our time series data
 breakpoint_dates <- date_seq[breakpoints]
 
-# Create a summary table of the breakpoints with their corresponding dates
+# Create a summary table of the breakpoints with their corresponding dates 
 break_summary <- data.frame(
   Breakpoint_Index = breakpoints,
   Breakpoint_Date = breakpoint_dates,
