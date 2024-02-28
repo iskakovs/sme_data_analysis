@@ -275,7 +275,7 @@ break_summary <- data.frame(
   Significance = coeftest(ols_model_adj_nw, vcov = NeweyWest(ols_model_adj_nw))[c('break1', 'break2'), "Pr(>|t|)"]
 )
 
-# Print the summary table
+# Print the summary table 
 print(break_summary)
 
 # Calculate residuals from the model
