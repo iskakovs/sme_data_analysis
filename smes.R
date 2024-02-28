@@ -43,7 +43,7 @@ pacf(ts_data, main = "Partial Autocorrelation Function")
 # Conduct a Ljung-Box test
 Box.test(ts_data, lag = as.integer(log(length(ts_data))), type = "Ljung-Box")
 
-# Identify structural breaks
+# Identify structural breaks 
 bp <- breakpoints(ts_data ~ 1)
 bp
 coef(bp)
