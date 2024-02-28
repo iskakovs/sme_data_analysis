@@ -288,3 +288,6 @@ pacf(residuals_nw, main = "PACF of Residuals")
 # Perform Durbin-Watson Test
 library(lmtest)
 dwtest(ols_model_adj_nw)
+
+# Perform Ljung-Box Test
+Box.test(residuals_nw, lag = log(length(residuals_nw)), type = "Ljung-Box")
