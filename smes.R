@@ -28,7 +28,7 @@ ts_data <- ts(data$number, frequency = 7)
 # Decompose the time series
 decomposed <- stl(ts_data, s.window = "periodic")
 
-# Plot the data 
+# Plot the data
 plot(decomposed)
 
 # Using ggplot to create a time series plot 
