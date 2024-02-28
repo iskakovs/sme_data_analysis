@@ -28,19 +28,19 @@ ts_data <- ts(data$number, frequency = 7)
 # Decompose the time series
 decomposed <- stl(ts_data, s.window = "periodic")
 
-# Plot the data
+# Plot the data 
 plot(decomposed)
 
-# Using ggplot to create a time series plot
+# Using ggplot to create a time series plot 
 ggplot(data, aes(x = date, y = number)) +
   geom_line() +
   labs(title = "Time Series Data", x = "Date", y = "Firms Registered")
 
-# Check for autocorrelation using ACF and PACF plots
+# Check for autocorrelation using ACF and PACF plots 
 acf(ts_data, main = "Autocorrelation Function")
 pacf(ts_data, main = "Partial Autocorrelation Function")
 
-# Conduct a Ljung-Box test 
+# Conduct a Ljung-Box test
 Box.test(ts_data, lag = as.integer(log(length(ts_data))), type = "Ljung-Box")
 
 # Identify structural breaks 
