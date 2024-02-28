@@ -171,7 +171,7 @@ ols_model <- lm(y ~ ., data=reg_data)
 # Add the fitted values to the 'reg_data' dataframe
 reg_data$Fitted <- predict(ols_model)
 
-# Assuming 'breakpoints' contains the indices of the breakpoints
+# Assuming 'breakpoints' contains the indices of the breakpoints 
 # And 'data$date' is the column with the actual dates in our original dataset
 breakpoint_dates <- data$date[breakpoints]
 
