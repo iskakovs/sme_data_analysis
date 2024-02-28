@@ -100,7 +100,7 @@ fit <- lm(Value ~ ., data=model_data)
 # Get the fitted trendline values
 data_df$Fitted <- predict(fit)
 
-# Create the ggplot object
+# Create the ggplot object 
 p <- ggplot(data_df, aes(x = Time, y = Value)) +
   geom_line() +
   geom_line(aes(y = Fitted), color = "blue") +
