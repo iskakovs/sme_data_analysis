@@ -163,7 +163,7 @@ p <- ggplot(data_df, aes(x = Date, y = Value)) +
 # Print the plot
 print(p)                      
 
-# Let's start over with new dataset
+# Let's start over with new dataset 
 
 # Assuming 'reg_data' already has the dummy variables for the breakpoints
 ols_model <- lm(y ~ ., data=reg_data)
