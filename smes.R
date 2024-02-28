@@ -285,7 +285,7 @@ residuals_nw <- residuals(ols_model_adj_nw)
 acf(residuals_nw, main = "ACF of Residuals")
 pacf(residuals_nw, main = "PACF of Residuals")
 
-# Perform Durbin-Watson Test
+# Perform Durbin-Watson Test 
 library(lmtest)
 dwtest(ols_model_adj_nw)
 
