@@ -57,7 +57,7 @@ bp <- breakpoints(data_vector ~ 1)
 # Summary of breakpoints
 summary(bp)
 
-# Plot the breakpoints
+# Plot the breakpoints 
 plot(bp)
 
 # Assuming 'ts_data' is your time series object and 'bp' is the breakpoint object you obtained previously
