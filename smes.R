@@ -311,3 +311,5 @@ for (i in 1:(length(breakpoints) + 1)) {
   print(paste("GLS Model for Segment", i))
   print(summary(gls_models[[i]]))
 }
+
+Addi_bp <- efp(ts_data ~ breakfactor(bp), type = "OLS-CUSUM")
