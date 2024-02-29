@@ -292,7 +292,7 @@ dwtest(ols_model_adj_nw)
 # Perform Ljung-Box Test
 Box.test(residuals_nw, lag = log(length(residuals_nw)), type = "Ljung-Box")
 
-# Assuming 'data_df' contains our time series data with 'Time', 'Value', and 'number' columns
+# Assuming 'data_df' contains our time series data with 'Time', 'Value', and 'number' columns 
 # and 'breakpoints' is our vector of breakpoints 
 breakpoints <- c(72, 275) # Replace with our actual breakpoints
 data_df$Segment <- cut(data_df$Time, breaks=c(1, breakpoints, nrow(data_df)), labels=FALSE)
