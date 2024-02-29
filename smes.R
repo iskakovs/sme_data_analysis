@@ -304,7 +304,7 @@ gls_models <- list()
 for (i in 1:(length(breakpoints) + 1)) {
   segment_data <- subset(data_df, Segment == i)
   
-  # Fit GLS model to each segment
+# Fit GLS model to each segment
   gls_models[[i]] <- gls(number ~ Value, data=segment_data, correlation=corAR1(form=~1|Time))
   
   # Output the summary of each model
