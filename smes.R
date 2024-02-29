@@ -296,3 +296,6 @@ Box.test(residuals_nw, lag = log(length(residuals_nw)), type = "Ljung-Box")
 # and 'breakpoints' is our vector of breakpoints
 breakpoints <- c(72, 275) # Replace with our actual breakpoints
 data_df$Segment <- cut(data_df$Time, breaks=c(1, breakpoints, nrow(data_df)), labels=FALSE)
+
+# Initialize an empty list to store GLS models
+gls_models <- list()
