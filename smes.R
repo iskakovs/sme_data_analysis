@@ -317,3 +317,6 @@ plot(Addi_bp)
 
 # Summary of breakpoints
 summary(bp)
+
+# Plotting breakpoints
+plot(bp)
