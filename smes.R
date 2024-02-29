@@ -314,3 +314,6 @@ for (i in 1:(length(breakpoints) + 1)) {
 
 Addi_bp <- efp(ts_data ~ breakfactor(bp), type = "OLS-CUSUM")
 plot(Addi_bp)
+
+# Summary of breakpoints
+summary(bp)
