@@ -320,3 +320,6 @@ summary(bp)
 
 # Plotting breakpoints
 plot(bp)
+
+# Extract breakpoint positions as a numeric vector
+breakpoint_positions <- as.numeric(breakpoints(bp, breaks = 2)$breakpoints)
